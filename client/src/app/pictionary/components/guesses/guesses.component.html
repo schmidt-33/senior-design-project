@@ -1,0 +1,24 @@
+<div class="guesses-container flex-grow-1 d-flex flex-column align-items-stretch">
+    <h2>Guesses</h2>
+    <div class="guesses-list flex-grow-1 bounded">
+        <div *ngFor="let guess of guesses">
+            <div *ngIf="guess.isCorrect">
+                {{guess.player.name}} has guessed the correct answer!
+            </div>
+            <div *ngIf="!guess.isCorrect">
+                {{guess.player.name}} - {{guess.guess}}
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!playerTurn" class="d-flex flex-column">
+        <input class="m-3 p-3" (keyup.enter)="submitGuess()"
+            id="guess-text"
+            appAutofocus type="text" [disabled]="!canSubmitGuess"
+            placeholder="What is being drawn? Enter your guess!"
+            [(ngModel)]="newGuess">
+        <button class="btn btn-secondary m-3" (click)="submitGuess()" 
+            [disabled]="!canSubmitGuess">
+            Submit
+        </button>
+    </div>
+</div>

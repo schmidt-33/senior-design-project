@@ -1,0 +1,29 @@
+<div class="d-flex flex-column">
+
+    <div *ngIf="joiningGame" class="flex-grow-1 d-flex flex-column">
+        <label class="flex-grow-1 d-flex flex-row">
+            <!-- Game Code -->
+            <input class="m-3 p-3 flex-grow-1" (keyup.enter)="joinGame()"
+                appAutofocus type="text"
+                placeholder="Enter Game Code" [(ngModel)]="gameCode"
+            >
+        </label>
+        <label class="flex-grow-1 d-flex flex-row">
+            <!-- Player Name -->
+            <input class="m-3 p-3 flex-grow-1" (keyup.enter)="joinGame()"
+                type="text"
+                placeholder="Enter Your Name" [(ngModel)]="playerName"
+            >
+        </label>
+    </div>
+
+    <div class="flex-grow-1 d-flex flex-row justify-content-center">
+        <button (click)="joinGame()" class="btn btn-secondary m-3"
+            [disabled]="joiningGame && !(hasGameCode() && hasPlayerName())">
+            Join Game
+        </button>
+        <button *ngIf="joiningGame" (click)="cancelJoinGame()" 
+            class="btn btn-secondary m-3">Cancel</button>
+    </div>
+
+</div>

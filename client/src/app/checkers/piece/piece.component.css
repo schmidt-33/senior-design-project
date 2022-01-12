@@ -1,0 +1,45 @@
+
+.square {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.piece {
+
+    display: inline-block;
+    border-radius: 100px;
+    position: absolute;
+    height: 80%;
+    width: 80%;
+    top: 10%;
+    left: 10%;
+}
+
+.piece.H {
+    background-color: #e82313;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.piece.C {
+    background-color: black;
+    
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.piece .crown {
+    color: white;
+    height: 50%;
+    width: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: block;
+    text-align: center;
+}

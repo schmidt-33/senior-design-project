@@ -1,0 +1,30 @@
+{
+    "players": [
+        {
+            "name": "string",
+            "ready": true,
+            "score": 0,
+            "answers": [
+                "Iron"
+            ]
+        }
+    ],
+    "questions": [
+        {
+            "category": "Science & Nature",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Which element has the chemical symbol &#039;Fe&#039;?",
+            "correct_answer": "Iron",
+            "incorrect_answers": [
+              "Gold",
+              "Silver",
+              "Tin"
+            ]
+        }
+    ],
+    "gameState": {
+        "currentQuestion": 0,
+        "questionState": "pre"
+    }
+}

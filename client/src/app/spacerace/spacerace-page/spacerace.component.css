@@ -1,0 +1,95 @@
+/**
+* Author: Nick Eby
+* Date: Nov.16.2021
+* File: spacerace.component.css
+* Description: This file contains all css for space race game
+*/
+
+
+body {
+    background-color: #f9fbfd;
+    margin-top: 50px;
+}
+
+.container {
+    margin: auto;
+    justify-items: center;
+    margin-top: 10%;
+}
+
+#gameScreen {
+    display: none;
+    text-align: center;
+}
+
+.full-height {
+    height: 80%;
+}
+
+.flex-display {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.center-alignment {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+#game-title {
+    font-size: 4em;
+    margin-bottom: 20px;
+}
+
+.create-game-container {
+    margin-bottom: 20px;
+}
+
+#join-game-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.justify-content-space-even {
+    justify-content: space-evenly;
+}
+
+.game-info-container {
+    width: 600px;
+    height: 75px;
+    margin-top: 10%;
+}
+
+.player-identifier {
+    margin-bottom: 0px;
+}
+
+.info {
+    text-align: center;
+}
+
+.info p {
+    margin: 0px;
+}
+
+#canvas {
+    border: 2 px solid black;
+}
+
+.container {
+    position: relative;
+    top: 10%;
+    /* top: 100px; */
+}
+
+#gameCodeDisplay {
+    position: relative;
+    z-index: 5;
+    color: aqua; /* just until issue with hiding behind the canvas is resolved */
+}

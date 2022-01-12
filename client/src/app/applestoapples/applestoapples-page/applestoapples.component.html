@@ -1,0 +1,133 @@
+<section class="full-view-height">
+    <div class="container full-height">
+        <div id="initial-game-screen" class="full-height">
+            <div class="flex-display flex-column center-alignment justify-content-center full-height">
+                <h3 id="game-title">Apples To Apples</h3>
+                <div class="create-username-form">
+                    <form appearance="fill">
+                        <input class="input-group-text" type="text" id="usernameInput" placeholder="username">
+                    </form>
+                </div>
+                <div class="create-game-container flex-display flex-column center-alignment justify-content-center">
+                    
+                    <button type="submit" class="btn btn-primary" id="newGameButton">
+                        Create Lobby
+                    </button>
+                </div>
+                <div class="join-game-container center-alignment">
+                    <h3>Join a Lobby With a Room Code</h3>
+                    <div class="join-game-container center-alignment justify-content-center flex-display">
+                        <div class="create-game-form mr-2">
+                            <form appearance="fill">
+                                <input class="input-group-text" type="text" id="gameCodeInput" placeholder="Room Code">
+                            </form>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="joinGameButton">
+                            Join Game
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="game-screen">
+          
+            <!--<h3><img src="../../../assets/HTTT.png" alt="" width="473" height="157" style="display:inline" style="background-color: rgb(194, 190, 142)"></h3>-->
+            <div style="display: inline" class="float-left" style="width: 50%">
+                <h1 id="gameWindowHeader1"></h1>
+                <p id="gameWindowExplanation1"></p>
+                <div id="intHeader2Div">
+                    <h1 id="gameWindowHeader2"></h1>
+                    <p id="gameWindowExplanation2"></p>
+
+
+                </div>
+                <!--Interactive section-->
+
+
+                <button type="submit" class="btn btn-primary" id="buttonReady"
+                    [disabled]=buttonReadyDisabled>
+                </button>
+                <br>
+                <br>
+                <!--Interactive timer-->
+                <p id="timer"></p>
+                <h4 id="show-correct-answer"></h4>
+            </div>
+            <div class="lobby-screen" class="float-right" >
+                <!--           <div class="lobby-screen" class="float-right" style="background-color: lightblue">-->
+
+                <!-- <h1>This is the lobby</h1>-->
+                <h1 id="playerHeader1"></h1>
+                <p id="nameSetup1"></p>
+                <div id="player2Div">
+                    <p id="nameSetup2"></p>
+                </div>
+                <div id="player3Div">
+                    <p id="nameSetup3"></p>
+                </div>
+                <div id="player4Div">
+                    <p id="nameSetup4"></p>
+                </div>
+                <div id="player5Div">
+                    <p id="nameSetup5"></p>
+                </div>
+                <div id="player6Div">
+                    <p id="nameSetup6"></p>
+                </div>
+                <div id="player7Div">
+                    <p id="nameSetup7"></p>
+                </div>
+                <div id="player8Div">
+                    <p id="nameSetup8"></p>
+                </div>
+                <div id="player9Div">
+                    <p id="nameSetup9"></p>
+                </div>
+                <div id="player10Div">
+                    <p id="nameSetup10"></p>
+                </div>
+                <div id="player11Div">
+                    <p id="nameSetup11"></p>
+                </div>
+                <div id="player12Div">
+                    <p id="nameSetup12"></p>
+                </div>
+                <div id="player13Div">
+                    <p id="nameSetup13"></p>
+                </div>
+                <div id="player14Div">
+                    <p id="nameSetup14"></p>
+                </div>
+                <div id="player15Div">
+                    <p id="nameSetup15"></p>
+                </div>
+                <br>
+                <br>
+            </div>
+            <div class= "cardinplay-screen" id =cardinplay>
+                <div class = ui-basic-segment2>
+                    <ul id="inplay">
+                        
+                    </ul>  
+                </div>
+            </div>
+
+
+            <div class="play-screen"  id = "play-screen">
+              
+
+                <div class = ui-basic-segment>
+    
+                <ul id="hand">
+                   
+                </ul>  
+                
+                </div>
+    
+            </div>
+        </div>
+       
+      
+     
+        
+    </div>

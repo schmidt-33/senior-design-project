@@ -1,0 +1,99 @@
+<!-- Minesweeper -->
+<div class="container vh-100 d-flex justify-content-center">
+    <div id="initialScreen" class="full-height">
+        <div class="flex-display flex-column center-alignment justify-content-center full-height">
+            <h1 id="game-title">Minesweeper</h1>
+        
+            <div class="create-game-container flex-display flex-column center-alignment justify-content-center">
+                <h2>Create a new game and create a shareable code</h2>
+                <button
+                    class="btn btn-primary"
+                    type="submit"
+                    id="newGameButton"
+                    
+                >
+                    Create New Game
+                </button>
+                <h3>Online: <span>{{onlineCount}}</span></h3>
+            </div>
+            <div class="join-game-container center-alignment">
+                <h2 class="text-center">Join a game with a code</h2>
+                <div class="join-game-container center-alignment justify-content-center flex-display">
+                    <div class="create-game-form">
+                        <form appearance="fill">
+                            <input class="input-group-text mr-2" type="text" id="gameCodeInput" placeholder="Enter Game Code">
+                        </form>
+                    </div>
+                    <button
+                        class="btn btn-primary"
+                        color="primary"
+                        type="submit"
+                        id="joinGameButton"
+                    >
+                        Join Game
+                    </button>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <div id="gameScreen">
+        <h1>Your Game Code Is: <span id="gameCodeDisplay"></span></h1>
+        <div class="flex-display flex-column center-alignment justify-content-center full-height">
+            <div class="container">
+                <table id="board">
+                    <tr>
+                        <td class="square" id="1"></td><td class="square" id="2"></td><td class="square" id="3"></td><td class="square" id="4"></td><td class="square" id="5"></td><td class="square" id="6"></td><td class="square" id="7"></td><td class="square" id="8"></td>
+                    </tr>
+                    <tr>
+                        <td class="square" id="9"></td><td class="square" id="10"></td><td class="square" id="11"></td><td class="square" id="12"></td><td class="square" id="13"></td><td class="square" id="14"></td><td class="square" id="15"></td><td class="square" id="16"></td>
+                    </tr>
+                    <tr>
+                        <td class="square" id="17"></td><td class="square" id="18"></td><td class="square" id="19"></td><td class="square" id="20"></td><td class="square" id="21"></td><td class="square" id="22"></td><td class="square" id="23"></td><td class="square" id="24"></td>
+                    </tr>
+                    <tr>
+                        <td class="square" id="25"></td><td class="square" id="26"></td><td class="square" id="27"></td><td class="square" id="28"></td><td class="square" id="29"></td><td class="square" id="30"></td><td class="square" id="31"></td><td class="square" id="32"></td>
+                    </tr>
+                    <tr>
+                        <td class="square" id="33"></td><td class="square" id="34"></td><td class="square" id="35"></td><td class="square" id="36"></td><td class="square" id="37"></td><td class="square" id="38"></td><td class="square" id="39"></td><td class="square" id="40"></td>
+                    </tr>
+                    <tr>
+                        <td class="square" id="41"></td><td class="square" id="42"></td><td class="square" id="43"></td><td class="square" id="44"></td><td class="square" id="45"></td><td class="square" id="46"></td><td class="square" id="47"></td><td class="square" id="48"></td>
+                    </tr>
+                    <tr>
+                        <td class="square" id="49"></td><td class="square" id="50"></td><td class="square" id="51"></td><td class="square" id="52"></td><td class="square" id="53"></td><td class="square" id="54"></td><td class="square" id="55"></td><td class="square" id="56"></td>
+                    </tr>
+                    <tr>
+                        <td class="square" id="57"></td><td class="square" id="58"></td><td class="square" id="59"></td><td class="square" id="60"></td><td class="square" id="61"></td><td class="square" id="62"></td><td class="square" id="63"></td><td class="square" id="64"></td>
+                    </tr>
+                </table>
+                <div class="info">
+                    <p id="welcome">Welcome to Minesweeper!</p>
+                    <p id="playerTurn">Turn: {{currentTurn}}</p>
+                    <h3 id="timer">Time Left: {{timeLeft}}</h3>
+                </div>
+            </div>
+            <div class="game-info-container flex-display justify-content-space-even center-alignment">
+                <h3 class="player-identifier">You Are Player: <span>{{playerNumber}}</span></h3>
+                <button
+                    color="primary"
+                    type="submit"
+                    class="btn btn-primary"
+                    id="minesweeperHomeButton"
+                [disabled]=minesweeperHomeButtonDisabled
+                >
+                    Go Back
+                </button>
+                <button
+                    color="primary"
+                    type="submit"
+                    class="btn btn-primary"
+                    id="rematchButton"
+                    [disabled]=rematchButtonDisabled
+                >
+                    Rematch ({{rematchCount}}/2)
+                </button>
+            </div>
+        </div>
+        <h1 id="gameWinnerMessage" class="game-winner-container flex-display justify-content-space-even center-alignment">{{gameWinnerMessage}}</h1>
+    </div>
+</div>

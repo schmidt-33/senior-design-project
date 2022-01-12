@@ -1,0 +1,108 @@
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebarCollapse"
+	aria-controls="sidebarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+	<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="container d-flex justify-content-center" id="sidebar-logo">
+	<img height="100px" src="../../../assets/img/logo_transparent_1.png"/>
+</div>
+
+
+<div class="collapse navbar-collapse" id="sidebarCollapse">
+
+	<ul class="navbar-nav">
+		<li class="nav-item" routerLinkActive="active">
+			<a routerLink='/home' class="nav-link">
+				<i class="fe fe-home"></i> Home
+			</a>
+		</li>
+		<li class="nav-item" routerLinkActive="active">
+			<a routerLink='/about' class="nav-link">
+				<i class="fe fe-info"></i> About
+			</a>
+		</li>
+	</ul>
+
+	<div class="border-top my-3"></div>
+
+	<h4 class="navbar-category-title">Game Select</h4>
+
+	<ul class="navbar-nav">
+		<li class="nav-item" routerLinkActive="active">
+			<a [routerLink]="['/applestoapples']" [replaceUrl]="true" class="nav-link">
+				<i class="fe fe-credit-card"></i> Apples To Apples
+			</a>
+		</li>
+		<li class="nav-item" routerLinkActive="active">
+			<a [routerLink]="['/asteroids']" [replaceUrl]="true" class="nav-link">
+				<i class="fe fe-navigation"></i> Asteroids
+			</a>
+		</li>
+		<li class="nav-item" routerLinkActive="active">
+			<a [routerLink]="['/battleship']" [replaceUrl]="true" class="nav-link">
+				<i class="fe fe-target"></i> Battleship
+			</a>
+		</li>
+		<li class="nav-item" routerLinkActive="active">
+			<a [routerLink]="['/checkers']" [replaceUrl]="true" class="nav-link">
+				<i class="fe fe-disc"></i> Checkers
+			</a>
+		</li>
+		<li class="nav-item" routerLinkActive="active">
+			<a [routerLink]="['/connectfour']" class="nav-link">
+				<i class="fe fe-disc"></i> Connect Four
+			
+			</a>
+		</li>
+		<li class="nav-item" routerLinkActive="active">
+			<a [routerLink]="['/drawsum']" [replaceUrl]="true" class="nav-link">
+				<i class="fe fe-edit"></i> Drawsum
+			</a>
+		</li>
+		<li class="nav-item" routerLinkActive="active">
+			<a [routerLink]="['/hangman']" [replaceUrl]="true" class="nav-link">
+				<i class="fe fe-terminal"></i> Hangman
+			</a>
+		</li>
+		<li class="nav-item" routerLinkActive="active">
+			<a [routerLink]="['/trivia']" [replaceUrl]="true" class="nav-link">
+				<i class="fe fe-book"></i> HatchTrivia
+			</a>
+		</li>
+		<li class="nav-item" routerLinkActive="active">
+			<a [routerLink]="['/minesweeper']" class="nav-link">
+				<i class="fe fe-edit"></i> Minesweeper
+			</a>
+		</li>
+		<li class="nav-item" routerLinkActive="active">
+			<a [routerLink]="['/pong']" [replaceUrl]="true" class="nav-link">
+				<i class="fe fe-circle"></i> Pong
+			</a>
+		</li>
+		<li class="nav-item" routerLinkActive="active">
+			<a [routerLink]="['/spaceinvaders']" [replaceUrl]="true" class="nav-link">
+				<i class="fe fe-navigation-2"></i> Space Invaders
+			</a>
+		</li>
+		<li class="nav-item" routerLinkActive="active">
+			<a [routerLink]="['/spacerace']" class="nav-link">
+				<i class="fe fe-navigation"></i> Space Race
+			</a>
+		</li>
+		<li class="nav-item" routerLinkActive="active">
+			<a [routerLink]="['/snake']" [replaceUrl]="true" class="nav-link">
+				<i class="fe fe-corner-up-right"></i> Snake
+			</a>
+		</li>
+		<li class="nav-item" routerLinkActive="active">
+			<a [routerLink]="['/tetris']" [replaceUrl]="true" class="nav-link">
+				<i class="fe fe-grid"></i> Tetris
+			</a>
+		</li>
+		<li class="nav-item" routerLinkActive="active">
+			<a [routerLink]="['/tictactoe']" class="nav-link">
+				<i class="fe fe-disc"></i> Tic Tac Toe
+			</a>
+		</li>
+	</ul>
+</div>

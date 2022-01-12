@@ -1,0 +1,52 @@
+.gameScreen {
+    display: none;
+}
+
+.full-view-height {
+    height: 100vh;
+    margin-right: 0px;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.flex-display {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.center-alignment {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+#game-title {
+    font-size: 4em;
+    margin-bottom: 20px;
+}
+
+.create-game-container {
+    margin-bottom: 20px;
+}
+
+#join-game-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.justify-content-space-even {
+    justify-content: space-evenly;
+}
+
+.game-info-container {
+    width: 600px;
+    height: 75px;
+}
+

@@ -1,0 +1,24 @@
+<div class="d-flex flex-column">
+
+    <label *ngIf="creatingGame" class="flex-grow-1 d-flex flex-row">
+        <!-- Player Name     -->
+        <input *ngIf="creatingGame && canChooseName" (keyup.enter)="createGame()"
+            class="m-3 p-3 flex-grow-1" appAutofocus
+            type="text" placeholder="Enter Your Name" [(ngModel)]="playerName"
+        >
+        <select *ngIf="wordListNames.length" class="m-3 p-3 flex-grow-1" [(ngModel)]="wordListName">
+            <option value="" disabled selected hidden>Select a word list</option>
+            <option *ngFor="let name of wordListNames">{{name}}</option>
+        </select>
+    </label>
+
+    <div class="flex-grow-1 d-flex flex-row justify-content-center">
+        <button (click)="createGame()" class="btn btn-primary m-3"
+            [disabled]="this.creatingGame && !canCreateGame()">
+            Create New Game
+        </button>
+        <button *ngIf="creatingGame" (click)="cancelCreateGame()" 
+            class="btn btn-secondary m-3">Cancel</button>
+    </div>
+
+</div>

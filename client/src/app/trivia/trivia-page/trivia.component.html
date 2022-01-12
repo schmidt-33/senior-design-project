@@ -1,0 +1,150 @@
+<section class="full-view-height">
+    <div class="container full-height">
+        <div id="initial-trivia-screen" class="full-height">
+            <div class="flex-display flex-column center-alignment justify-content-center full-height">
+                <img src="../../../assets/HTTT.png" width="60%" height="auto" />
+                <div class="container flex-display flex-column center-alignment justify-content-center">
+                    <h3>Enter a username</h3>
+                    <div class="create-username-form">
+                        <div class="input-group">
+                            <input class="form-control mr-2" type="text" id="usernameInput" placeholder="username">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-dark" id="generateRandomUsername"
+                                    (click)="generateRandomUsername()">
+                                    Random
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="container flex-display flex-column center-alignment justify-content-center mt-3">
+                    <div class="row">
+                        <div class="columm text-center mr-3">
+                            <div class="form-group">
+                                <h3 for="quantity">Number of Players (Max: {{maxNumberOfPlayers}})</h3>
+                                <input type="number" id="num-players-selector" name="num-players"
+                                    min="{{minimumNumberOfPlayers}}" max="{{maxNumberOfPlayers}}"
+                                    value="{{minimumNumberOfPlayers}}" class="form-control" onkeydown="return false">
+                            </div>
+                            <div class="form-group">
+                                <h3 for="quantity">Number of Questions (Max: {{maxNumberOfQuestions}})</h3>
+                                <input type="number" id="num-questions-selector" name="num-questions"
+                                    min="{{minimumNumberOfQuestions}}" max="{{maxNumberOfQuestions}}"
+                                    value="{{minimumNumberOfQuestions}}" class="form-control" onkeydown="return false">
+                            </div>
+                        </div>
+                        <div class="columm text-center mr-3">
+                            <div class="form-group">
+                                <form appearance="fill">
+                                    <h3>Select Category</h3>
+                                    <select class="form-control" id="category-selector">
+                                        <option *ngFor="let category of categories" [value]="category.id">
+                                            {{category.name}}
+                                        </option>
+                                    </select>
+                                </form>
+                            </div>
+                            <div class="form-group">
+                                <form appearance="fill">
+                                    <h3>Select Difficulty</h3>
+                                    <select class="form-control" id="difficulty-selector">
+                                        <option value="easy">Easy</option>
+                                        <option value="medium">Medium</option>
+                                        <option value="hard">Hard</option>
+                                        <option value="any">Any</option>
+                                    </select>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container flex-display flex-column center-alignment justify-content-center">
+                    <div class="row">
+                        <div class="columm text-center mr-3">
+                            <div class="join-game-container center-alignment">
+                                <h3>Join a Lobby With a Room Code</h3>
+                                <div class="join-game-container center-alignment justify-content-center flex-display">
+                                    <div class="create-game-form mr-2">
+                                        <form appearance="fill">
+                                            <input class="form-control" type="text" id="gameCodeInput"
+                                                placeholder="Room Code">
+                                        </form>
+                                    </div>
+                                    <button type="button" class="btn btn-dark" id="joinGameButton" (click)="joinGame()">
+                                        Join Game
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="columm text-center">
+                            <div
+                                class="create-game-container flex-display flex-column center-alignment justify-content-center">
+                                <h3>Create a New Lobby To Play Trivia!</h3>
+                                <button type="button" class="btn btn-dark" id="newGameButton" (click)="newGame()">
+                                    Create Lobby
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="game-screen">
+            <h3 class="text-center"><img src="../../../assets/HTTT.png" alt="Hatch Trivia" width="70%" height="auto">
+            </h3>
+            <div style="display: inline" class="float-left" style="width: 50%">
+                <h1 id="gameWindowHeader1" class="game-text">How To Play</h1>
+                <p id="gameWindowExplanation1" class="game-text-p"></p>
+                <div id="intHeader2Div">
+                    <h1> Your Game code is <span id="game-code-span">{{roomName}}</span></h1>
+                    <p id="gameWindowExplanation2" class="game-text-p">Share this code to the other players who want to
+                        join this game.
+                        Once everyone is in the game, all players must press the ready button to start the game</p>
+                    <p class="game-text-p"><strong>Category</strong>: {{categoryName}}</p>
+                    <p class="game-text-p"><strong>Difficulty</strong>: {{difficulty}}</p>
+                    <p class="game-text-p"><strong>Number of Questions</strong>: {{gameState.questions.length}}</p>
+                </div>
+                <!--Interactive section-->
+
+                <div id="intAnswerDiv">
+                    <h2><b>Answers</b></h2>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="choice" value="answer1"
+                            (change)="handleRadioChange($event)"> <i id="answer1" class="game-text-p"></i><br>
+                        <input class="form-check-input" type="radio" name="choice" value="answer2"
+                            (change)="handleRadioChange($event)"> <i id="answer2" class="game-text-p"></i><br>
+                        <input class="form-check-input" type="radio" name="choice" value="answer3"
+                            (change)="handleRadioChange($event)"> <i id="answer3" class="game-text-p"></i><br>
+                        <input class="form-check-input" type="radio" name="choice" value="answer4"
+                            (change)="handleRadioChange($event)"> <i id="answer4" class="game-text-p"></i><br>
+                    </div>
+                    <br>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-dark w-100 align-center" id="buttonReady"
+                        [disabled]=buttonReadyDisabled (click)="handleButtonReadyClick()">
+                    </button>
+                    <p class="game-text-p" id="timer"></p>
+                    <h2 id="show-correct-answer"></h2>
+                </div>
+            </div>
+            <div class="lobby-screen" id="lobby-screen" class="float-right">
+                <h1 id="playerHeader1"></h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification modal for player messages -->
+    <ng-template #modalData id="notification-modal" let-modal>
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">{{modalTitle}}</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">×</span>
+            </button>
+        </div>
+        <div class="modal-body" [innerHtml]="modalBody"></div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger"
+                (click)="modal.close('Save click')">{{modalFooterText}}</button>
+        </div>
+    </ng-template>

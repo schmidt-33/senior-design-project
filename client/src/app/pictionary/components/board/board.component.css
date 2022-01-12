@@ -1,0 +1,22 @@
+#mainBoard {
+    min-height: 80vh;
+    width: 100%;
+}
+
+.info-column {
+    min-width: 300px;
+}
+
+.inter-round {
+    font-size: 300%;
+}
+
+app-players {
+    font-size: 125% !important;
+    border-radius: 0.25em;
+    background-color: rgba(255,255,255,0.75);
+}
+
+app-guesses {
+    min-width: 300px;
+}

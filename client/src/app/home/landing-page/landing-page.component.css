@@ -1,0 +1,132 @@
+.toolbar-spacer {
+    flex: 1 1 auto;
+}
+
+.toolbar-logo {
+    padding-right: 5px;
+}
+
+.landing-page-body {
+    /* background-image: url("../../../assets/landing_page_tile.png"); */
+    background-repeat: repeat;
+    width: auto;
+    height: 100vh;
+}
+
+.landing-page-banner {
+    width: 99%;
+    background-color: #231f20;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    -webkit-filter: drop-shadow(2px 2px 2px #222);
+    filter: drop-shadow(2px 2px 2px #222);
+}
+
+
+.landing-page-logo {
+    transition: .2s ease-out;
+    height:  20em;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+}
+
+.landing-page-logo:hover {
+   transform: scale(1.2);
+}
+
+.online-count-container {
+    display: flex;
+    align-items: center;
+
+}
+
+.online-count-blinker {
+    height: 15px;
+    width: 15px;
+    background-color: greenyellow;
+    border-radius: 50%;
+    display: inline-block;
+    animation: online-count-blinker 1.5s linear infinite;
+}
+
+@keyframes online-count-blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+.in-game-count {
+    font-size: 15px;
+    align-items: center;
+}
+
+.in-game-count-container {
+    display: flex;
+    align-items: center;
+
+}
+
+.in-game-count-blinker {
+    height: 15px;
+    width: 15px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    animation: in-game-count-blinker 1.5s linear infinite;
+}
+
+@keyframes in-game-count-blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+.in-game-count {
+    font-size: 15px;
+    align-items: center;
+}
+.gamescreen-countdown-big {
+    font-size: 500%;
+    opacity: 0;
+    transition: all linear 1s;
+    color: white;
+    position: absolute;
+    top: 325px;
+}
+
+.btn{
+    font-size: x-large;
+}
+.game-container{
+    height: 250px;
+    width: 275px;
+    font: size 25rem;
+    margin-left: 30px;
+}
+
+.card{
+    background-color: rgb(211, 219, 226);
+    outline: solid rgb(0, 0, 0);
+    margin-bottom: auto;
+}
+
+.new-game-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: flex-start;
+
+    width: 95%;
+    height: 500px;
+    row-gap: 130px;
+}
+
+.game-library-divider {
+    margin: auto;
+    width: 99%;
+    margin-bottom: 20px;
+}

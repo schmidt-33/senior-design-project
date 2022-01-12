@@ -1,0 +1,9 @@
+<nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light" id="sidebar">
+	<app-sidebar></app-sidebar>
+</nav>
+
+<app-loading-bar [context]="'router'" [isGlobal]="true"></app-loading-bar>
+
+<div class="router-container">
+	<router-outlet></router-outlet>
+</div>

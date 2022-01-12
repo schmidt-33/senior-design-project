@@ -1,0 +1,105 @@
+<div class="container vh-100 d-flex justify-content-center">
+  <div id="initialScreen" class="full-height">
+    <div class="flex-display flex-column center-alignment justify-content-center full-height">
+      <h1 id="game-title">Multiplayer Connect Four</h1>
+      <div class="d-flex flex-column p-2 justify-content-center">
+
+        <div class="d-inline-flex p-2 justify-content-center align-items-center">
+          <form class="d-inline-flex p-2 justify-content-center">
+
+          </form>
+        </div>
+      </div>
+      <div class="create-game-container flex-display flex-column center-alignment justify-content-center">
+        <h2>Create a new game and create a shareable code</h2>
+        <button class="btn btn-primary" type="submit" id="newGameButton" style="margin-bottom: 5px;">
+          Create New Game
+        </button>
+
+        <h3>Online: <span>{{onlineCount}}</span></h3>
+      </div>
+      <div class="join-game-container center-alignment">
+        <h2 class="text-center">Join a game with a code</h2>
+        <div class="join-game-container center-alignment justify-content-center flex-display">
+          <div class="create-game-form">
+            <form appearance="fill">
+              <input class="input-group-text mr-2" type="text" id="gameCodeInput" placeholder="Enter Game Code">
+            </form>
+          </div>
+          <button class="btn btn-primary" color="primary" type="submit" id="joinGameButton">
+            Join Game
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="gameScreen">
+    <div class="flex-display flex-column center-alignment justify-content-center ">
+      <h1>Your Game Code Is: <span id="gameCodeDisplay"></span></h1>
+
+
+      <div class="row" *ngIf="winner === 0">
+        <button (click)="restart()" class="btn btn-default btn-block">
+          Restart Game
+        </button>
+        <div class="text-center">
+          <h3 *ngIf="game.isPlayerOne()">Player 1 turn!</h3>
+          <h3 *ngIf="game.isPlayerTwo()">Player 2 turn!</h3>
+        </div>
+      </div>
+
+      <div class = ui-basic-segment>
+       
+    
+      <div class="grid">
+        <div class="container">
+
+          <div *ngIf="winner !== 0" class="row winner-row">
+            <p>Player {{winner}} has won !</p>
+          </div>
+
+          <div *ngIf="winner === 0">
+            <div class="row selection-row">
+              <div (mouseover)="show(i)" (click)="add(i)" class="selection-case"
+                *ngFor="let piece of pieces; let i = index">
+                <div *ngIf="piece.visible" class="circle"
+                  [ngClass]="{'red': game.isPlayerOne(), 'yellow': game.isPlayerTwo()}"></div>
+              </div>
+            </div>
+
+            <div class="row custom-row" *ngFor="let row of game.grid">
+              <div class="case" (mouseover)="show(i)" (click)="add(i)" *ngFor="let case of row; let i = index">
+                <div class="circle"
+                  [ngClass]="{'white': case.isEmpty(), 'red': case.isRed(), 'yellow': case.isYellow()}">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+      <div class="game-info-container flex-display justify-content-space-even center-alignment ">
+        <h3 class="player-identifier">You Are Player: <span>{{playerNumber}}</span></h3>
+
+        <button color="primary" type="submit" class="btn btn-primary" id="checkersHomeButton"
+          [disabled]=connectfourHomeButtonDisabled>
+          Go Back
+        </button>
+        <button color="primary" type="submit" class="btn btn-primary" id="rematchButton"
+          [disabled]=rematchButtonDisabled>
+          Rematch ({{rematchCount}}/2)
+        </button>
+      </div>
+
+    </div>
+
+
+    <h1 id="gameWinnerMessage" class="game-winner-container flex-display justify-content-space-even center-alignment">
+      {{gameWinnerMessage}}</h1>
+
+  </div>
+</div>

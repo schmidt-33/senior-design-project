@@ -1,0 +1,154 @@
+.full-view-height {
+    height: 100vh;
+    margin-right: 0px;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.flex-display {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.center-alignment {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.letter-button {
+    display: inline-block;
+}
+
+.letter-button:disabled {
+    opacity: 0.5;
+    color: black;
+}
+
+#keyboard {
+    width: 100%;
+    text-align: center;
+}
+
+.secretWord {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-size: 3rem;
+}
+
+.win,
+.tie {
+    color: green;
+    font-size: 5rem;
+}
+
+.lose {
+    color: red;
+    font-size: 5rem;
+}
+
+.justify-content-space-even {
+    justify-content: space-evenly;
+}
+
+.game-info-container {
+    width: 600px;
+    height: 75px;
+}
+
+.flex-display {
+    display: flex;
+}
+
+.guessed {
+    background-color: grey;
+}
+
+.hangman.container {
+
+    // background-color: rgba(119, 136, 153, 0.3);
+
+    .bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left :0;
+        overflow: hidden;
+        opacity: .25;
+        z-index: -10;
+    }
+
+    .bg img {
+        position: absolute;
+        display: block;
+        transform: scale(25%);
+    }
+
+    .bg img:nth-child(1) {
+        left: 15%; 
+        animation: float 22s ease-in infinite;
+        animation-delay: -1s;
+    }
+
+    .bg img:nth-child(2) {
+        left: 30%; 
+        animation: float 25s ease-out reverse infinite;
+        animation-delay: -5s;
+    }
+
+    .bg img:nth-child(3){
+        left: 45%; 
+        animation: float 20s ease-in-out infinite;
+        animation-delay: -6s; 
+    }
+
+    .bg img:nth-child(4){
+        left: 60%; 
+        animation: float 25s ease-out reverse infinite; 
+        animation-delay: -3s;
+    }
+
+    .bg img:nth-child(5){
+        left: 75%; 
+        animation: float 22s ease-in infinite;
+        animation-delay: -4s;
+    }
+
+    .bg img:nth-child(6){
+        left: 90%; 
+        animation: float 25s ease-out reverse infinite;
+        animation-delay: -2s;
+    }
+
+    @keyframes float{
+        0%{
+            top:-20%;
+            transform: translateX(0%) scale(25%) rotate(0deg);
+        }
+        20%{
+            transform: translateX(25%) scale(20%) rotate(45deg);
+        }
+        40%{
+            transform: translateX(35%) scale(25%) rotate(90deg);
+        }
+        60%{
+            transform: translateX(55%) scale(30%) rotate(135deg); 
+        }
+        80%{
+            transform: translateX(65%) scale(25%) rotate(180deg);
+        }
+        100%{
+            top: 120%;
+            transform: translateX(90%) scale(20%) rotate(225deg);
+        }
+    }
+
+}

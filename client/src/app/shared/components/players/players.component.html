@@ -1,0 +1,23 @@
+<div class="d-flex flex-column m-3">
+
+    <ul *ngIf="players.length && !displayAsTwoColumns" class="flex-grow-1 d-flex flex-column">
+        <li *ngFor="let player of players" class="p-1">
+            <span class="name">{{player.name}}</span>
+            <span *ngIf="showScores" class="score"> - {{player.score || "0"}}</span>
+        </li>
+    </ul>
+
+    <ul *ngIf="players.length  && displayAsTwoColumns" class="flex-grow-1 d-flex 
+        flex-row flex-wrap align-content-center text-center row-cols-2"
+    >
+        <li *ngFor="let player of players" class="p-5">
+            <span class="name">{{player.name}}</span>
+            <span *ngIf="showScores" class="score"> - {{player.score || "0"}}</span>
+        </li>
+    </ul>
+
+    <div *ngIf="players.length === 0">
+        Waiting on players to join...
+    </div>
+
+</div>

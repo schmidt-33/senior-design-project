@@ -1,0 +1,22 @@
+.guesses-container {
+    border-radius: 0.25em;
+    background-color: rgba(255,255,255,0.75);
+}
+
+h2 {
+    margin: 0.5em;
+    text-align: center;
+}
+
+.guesses-list {
+    padding: 0.5em;
+}
+
+button:not(:disabled):not(.disabled):hover {
+    transform: scale(1.1) rotate(3deg);
+}
+
+.bounded {    
+    overflow-y: scroll;
+    max-height: 500px;
+}

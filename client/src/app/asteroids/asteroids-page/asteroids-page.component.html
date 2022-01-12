@@ -1,0 +1,57 @@
+<!-- <div id="game"></div> -->
+
+<!-- <section class="full-view-height"> -->
+<div class="container vh-100 d-flex justify-content-center">
+    <div id="initialScreen" class="full-height">
+        <div class="flex-display flex-column center-alignment justify-content-center full-height">
+            <h1 id="game-title">Asteroids</h1>
+            <div class="create-game-container flex-display flex-column center-alignment justify-content-center">
+                <h2>Play a single player game of Asteroids</h2>
+                <button class="btn btn-primary" type="submit" id="newGameButton" (click)="singlePlayerEvent()">
+                    Play Single Player
+                </button>
+            </div>
+            <div class="create-game-container flex-display flex-column center-alignment justify-content-center">
+                <h2>Create a multiplayer game and get a shareable code</h2>
+                <button class="btn btn-primary" type="submit" id="newGameButton"
+                    (click)="handleMultiplayerNewGameEvent()">
+                    Create Multiplayer Game
+                </button>
+            </div>
+            <div class="join-game-container center-alignment">
+                <h2 class="text-center">Join a game with a code</h2>
+                <div class="join-game-container center-alignment justify-content-center flex-display">
+                    <div class="create-game-form">
+                        <form appearance="fill">
+                            <input class="input-group-text mr-2" type="text" id="gameCodeInput"
+                                placeholder="Enter Game Code">
+                        </form>
+                    </div>
+                    <button class="btn btn-primary" color="primary" type="submit" id="joinGameButton">
+                        <!-- <mat-icon id="join-game-icon">arrow_forward</mat-icon> -->
+                        Join Game
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gameScreen" id="singlePlayerGameScreen">
+        <div class="flex-display flex-column center-alignment justify-content-center full-height">
+            <div id="singlePlayerGame"></div>
+        </div>
+    </div>
+    <div class="gameScreen" id="multiplayerGameScreen">
+        <div class="flex-display flex-column center-alignment justify-content-center full-height">
+            <div *ngIf="allPlayersJoined" id="multiplayerGame">
+                <h1>Game Screen</h1>
+            </div>
+            <div *ngIf="!allPlayersJoined" id="multiplayerGameWaitingScreen">
+                <h1>Waiting for player(s) to join</h1>
+                <div class="d-flex justify-content-center">
+                    <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- </section> -->

@@ -1,0 +1,10 @@
+canvas {
+    height: 600px;
+    width: 800px;
+}
+
+.palette-button {
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid;
+}

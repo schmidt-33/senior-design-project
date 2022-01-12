@@ -1,0 +1,131 @@
+<!-- Application Toolbar -->
+<!-- <mat-toolbar color="primary">
+    <mat-icon class="toolbar-logo">videogame_asset</mat-icon>
+    <span>HatchGames</span>
+    <span class="toolbar-spacer"></span>
+    <button mat-flat-button color="primary" class="nav-item nav-link-edit" [routerLink]="['/select']">Game
+        Select</button>
+    <button mat-flat-button color="primary" class="nav-item nav-link-edit" [routerLink]="['/about']">About</button>
+</mat-toolbar> -->
+<!-- Landing Page Banner and columns  -->
+<div class="landing-page-body">
+    <div class="landing-page-banner m-auto">
+        <img class="landing-page-logo"
+            src="../../../assets/img/logo_transparent_1.png">
+    </div>
+    <!-- <div class="container online-count-container">
+        <p class="online-count"><span class="online-count-blinker"></span>
+            Online: <span>{{onlineCount}}</span></p>
+    </div>
+    <div class="container in-game-count-container">
+        <p class="in-game-count"><span class="in-game-count-blinker"></span> In
+            Game: <span>{{inGameCount}}</span></p>
+    </div> -->
+
+    <br>
+    <br>
+    <br>
+    <h1> New Games </h1>
+
+    <div class="new-game-container d-flex justify-content-center">
+        <div class="game-container" *ngFor="let game of newGames">
+            <div class="card">
+                <img width="200px" height="225px"
+                    [src]= "game.image"
+                    class="card-img-top">
+                    <p class="card-tex">{{game.description}}</p>
+                <a [routerLink]= "[game.route]"
+                    role="button"
+                    class="btn btn-outline stretched-link btn-lg btn-block
+                    text-center">
+                    {{game.gameTitle}}
+                </a>
+            </div>
+        </div>
+
+        
+            <!-- <mat-card class="landing-page-content-card">
+        <div class="landing-page-content-header">
+            <mat-card-title class="landing-page-card-title text-center">Welcome to HatchGames!</mat-card-title>
+            <mat-card-subtitle class="text-center">HatchGames is an interactive online gaming platform aimed to encourage some fun in the
+                work</mat-card-subtitle>
+            <mat-card-actions class="landing-page-card-navigation">
+                <h3 class="landing-page-page-text">Pages</h3>
+                <button mat-flat-button color="primary" class="nav-item nav-link-edit landing-page-card-nav-button" [routerLink]="['/select']">Game
+                    Select</button>
+                <button mat-flat-button color="primary" class="nav-item nav-link-edit landing-page-card-nav-button"
+                    [routerLink]="['/about']">About</button>
+            </mat-card-actions>
+        </div>
+        <div class="landing-page-columns-row">
+            <div class="landing-page-column">
+                <h1 id="landing-page-title">HatchGames News</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat
+                    vivamus. Tristique risus nec feugiat in fermentum posuere urna. Elit at imperdiet dui accumsan sit
+                    amet nulla facilisi morbi. Nulla pellentesque dignissim enim sit. Pulvinar pellentesque habitant
+                    morbi tristique senectus et netus. Dolor morbi non arcu risus quis. Ultrices neque ornare aenean
+                    euismod elementum. Hendrerit gravida rutrum quisque non tellus orci ac auctor. Feugiat scelerisque
+                    varius morbi enim. Tortor id aliquet lectus proin nibh. Nulla facilisi cras fermentum odio eu
+                    feugiat pretium.
+                </p>
+                <p>
+                    Commodo odio aenean sed adipiscing diam donec. Nec ullamcorper sit amet risus nullam eget felis eget
+                    nunc. Vulputate mi sit amet mauris commodo quis imperdiet. Cras ornare arcu dui vivamus arcu felis.
+                    Ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Convallis convallis tellus
+                    id interdum velit laoreet. Est velit egestas dui id ornare arcu. Tincidunt ornare massa eget egestas
+                    purus viverra accumsan in. Risus nullam eget felis eget nunc lobortis mattis. Mattis ullamcorper
+                    velit sed ullamcorper morbi. Pellentesque eu tincidunt tortor aliquam nulla. Commodo sed egestas
+                    egestas fringilla phasellus faucibus scelerisque. Sed viverra ipsum nunc aliquet bibendum. Id diam
+                    maecenas ultricies mi. Lacus suspendisse faucibus interdum posuere lorem ipsum dolor. Vel turpis
+                    nunc eget lorem dolor. Lorem donec massa sapien faucibus et.
+                </p>
+                <p>
+                    Proin fermentum leo vel orci porta non pulvinar neque. Sed vulputate odio ut enim blandit. Ultrices
+                    dui sapien eget mi proin sed libero. Nam at lectus urna duis convallis convallis tellus. Libero nunc
+                    consequat interdum varius. Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus. Purus semper
+                    eget duis at tellus at. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi
+                    tristique senectus. Fermentum iaculis eu non diam phasellus vestibulum lorem sed. Orci nulla
+                    pellentesque dignissim enim sit. Lobortis elementum nibh tellus molestie nunc. Elit duis tristique
+                    sollicitudin nibh sit amet. Ac odio tempor orci dapibus ultrices in. Pretium quam vulputate
+                    dignissim suspendisse in est.
+                </p>
+            </div>
+            <div class="landing-page-column">
+                <h1 id="landing-page-title">HatchGames Events</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat
+                    vivamus. Tristique risus nec feugiat in fermentum posuere urna. Elit at imperdiet dui accumsan sit
+                    amet nulla facilisi morbi. Nulla pellentesque dignissim enim sit. Pulvinar pellentesque habitant
+                    morbi tristique senectus et netus. Dolor morbi non arcu risus quis. Ultrices neque ornare aenean
+                    euismod elementum. Hendrerit gravida rutrum quisque non tellus orci ac auctor. Feugiat scelerisque
+                    varius morbi enim. Tortor id aliquet lectus proin nibh. Nulla facilisi cras fermentum odio eu
+                    feugiat pretium.
+                </p>
+                <p>
+                    Commodo odio aenean sed adipiscing diam donec. Nec ullamcorper sit amet risus nullam eget felis eget
+                    nunc. Vulputate mi sit amet mauris commodo quis imperdiet. Cras ornare arcu dui vivamus arcu felis.
+                    Ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Convallis convallis tellus
+                    id interdum velit laoreet. Est velit egestas dui id ornare arcu. Tincidunt ornare massa eget egestas
+                    purus viverra accumsan in. Risus nullam eget felis eget nunc lobortis mattis. Mattis ullamcorper
+                    velit sed ullamcorper morbi. Pellentesque eu tincidunt tortor aliquam nulla. Commodo sed egestas
+                    egestas fringilla phasellus faucibus scelerisque. Sed viverra ipsum nunc aliquet bibendum. Id diam
+                    maecenas ultricies mi. Lacus suspendisse faucibus interdum posuere lorem ipsum dolor. Vel turpis
+                    nunc eget lorem dolor. Lorem donec massa sapien faucibus et.
+                </p>
+                <p>
+                    Proin fermentum leo vel orci porta non pulvinar neque. Sed vulputate odio ut enim blandit. Ultrices
+                    dui sapien eget mi proin sed libero. Nam at lectus urna duis convallis convallis tellus. Libero nunc
+                    consequat interdum varius. Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus. Purus semper
+                    eget duis at tellus at. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi
+                    tristique senectus. Fermentum iaculis eu non diam phasellus vestibulum lorem sed. Orci nulla
+                    pellentesque dignissim enim sit. Lobortis elementum nibh tellus molestie nunc. Elit duis tristique
+                    sollicitudin nibh sit amet. Ac odio tempor orci dapibus ultrices in. Pretium quam vulputate
+                    dignissim suspendisse in est.
+                </p>
+            </div>
+        </div>
+    </mat-card> -->
+        </div>

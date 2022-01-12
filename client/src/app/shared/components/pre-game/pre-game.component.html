@@ -1,0 +1,32 @@
+<div class="flex-grow-1 d-flex flex-column align-items-center justify-content-around">
+    <div>
+        Your game code is: <span class="gameCode m-3">{{gameCode}}</span>
+    </div>
+
+    <div *ngIf="!gameStarted" [ngClass]="{'error' : players.length < minimumPlayers }">
+        {{players.length}} / {{maximumPlayers}} players
+    </div>
+
+    <app-players class="d-flex"
+        [players]="players"
+        [displayAsTwoColumns]="true"
+    ></app-players>
+
+    <div *ngIf="hasTooFewPlayers()" class="error">
+        This game requires a minimum of {{minimumPlayers}} players.
+    </div>
+
+    <div *ngIf="hasTooManyPlayers()" class="error">
+        This game supports a maximum of {{maximumPlayers}} players.
+    </div>
+
+    <div *ngIf="isVIP" class="d-flex flex-row">
+        <button (click)="startGame()" class="btn btn-primary m-3"
+            [disabled]="hasTooFewPlayers() || hasTooManyPlayers()">Start Game</button>
+        <button (click)="leaveGame()" class="btn btn-warning m-3">Cancel</button>
+    </div>
+
+    <div *ngIf="!isVIP" class="d-flex flex-row">
+        <button  (click)="leaveGame()" class="btn btn-warning m-3">Leave Game</button>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="flex-grow-1 d-flex flex-column justify-content-around">
+    <app-board-header class="align-self-center"
+        [gameCode]="gameCode"
+        [activePlayer]="activePlayer"
+        [roundTimer]="roundTimer"
+    ></app-board-header>
+    
+    <div class="flex-grow-1 d-flex flex-row justify-content-around">
+        <div class="info-column d-flex flex-column">
+            <app-players class="mb-3"
+                [players]="players"
+                [showScores]=true
+            ></app-players>
+
+            <app-guesses *ngIf="roundStarted"
+                class="flex-grow-1 d-flex flex-column"
+                [gameCode]="gameCode"
+                [currentPlayer]="currentPlayer"
+                [playerTurn]="isPlayerTurn()"
+            ></app-guesses>
+        </div>
+        
+        <div class="align-self-center d-flex flex-column">
+            <div *ngIf="!roundStarted && !roundEnded">
+                <app-round-word-chooser *ngIf="isPlayerTurn()"
+                    [gameCode]="gameCode"
+                ></app-round-word-chooser>
+                <div *ngIf="!isPlayerTurn()" class="d-flex flex-column align-items-center">
+                    <div>Waiting on {{activePlayer.name}}...</div>
+                    <app-spinner></app-spinner>
+                </div>
+            </div>
+
+            <app-canvas *ngIf="roundStarted && !roundEnded"
+                class="align-self-center d-flex flex-column align-items-center"
+                [playerTurn]="isPlayerTurn()"
+                [gameCode]="gameCode"
+                (canvasUpdated)="canvasUpdated($event)"
+            ></app-canvas>
+            
+            <div *ngIf="roundEnded" class="inter-round">Well done!</div>
+        </div>
+    </div>
+
+    <app-board-footer class="align-self-center mt-3"
+        [gameOver]="gameOver"
+        (gameLeft)="leaveGame()"
+    ></app-board-footer>
+</div>

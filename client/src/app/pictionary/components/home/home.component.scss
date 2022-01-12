@@ -1,0 +1,133 @@
+
+.drawsum.container {
+    min-height: 100vh;
+    background: repeating-conic-gradient(
+        hsl(0deg 0% 80% / 31%) 0deg 15deg,
+        hsla(0, 66%, 16%, 0) 0deg 30deg
+    ) #dc1ef5;
+    max-width: 100vw !important;
+    padding: 1em;
+    margin: 0;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 22px;
+    transition: all 240ms;
+    animation: animateBackgroundColor 45s ease-in-out infinite;
+    
+    h1 {
+        font-size: 2em;
+    }
+
+    app-player-counter {
+        font-size: 1.1em;
+    }
+
+    app-description,
+    app-instructions {
+        font-size: 0.9em;
+    }
+
+    app-players {
+        font-size: 200%;
+    }
+
+    .count {
+        font-size: 150%;
+    }
+
+    .gameCode {
+        font-size: 150%;
+        font-weight: bolder;
+        font-family: sans-serif;
+        color: rgb(243, 243, 243);;
+        display: inline-block;
+        padding: .25rem 0.5rem;
+        text-shadow: 1px 1px 5px rgba(71, 65, 65, 0.8);
+    }
+
+    .error,
+    .game-over {
+        font-size: 150%;
+        color: rgb(243, 243, 243);
+        text-shadow: 1px 1px 1px rgba(71, 65, 65, 0.8);
+    }
+
+    .game-over {
+        font-size: 200%;
+    }
+
+    ul {
+        list-style: none;
+        padding-inline-start: 0;
+    }
+
+    button.btn {
+        color: rgb(243, 243, 243);
+        font-size: 28px;
+        transition: all 0.240s ease-in-out;
+        box-shadow: rgba(71, 65, 65, 0.1) 0px 10px 15px, 
+        rgba(71, 65, 65, 0.1) 0px -10px 15px,
+        rgba(71, 65, 65, 0.1) -10px 0px 15px, 
+        rgba(71, 65, 65, 0.1) 10px 0px 15px;
+        background-color: rgba(0, 0, 0, .60);
+        border-color: rgb(0, 0, 0);
+    }
+
+    button.btn.btn-danger {
+        background-color: rgba(226, 11, 11, 0.6);
+    }
+
+    button:not(:disabled):not(.disabled):hover {
+        transform: scale(1.1) rotate(-3deg);
+        color: rgb(243, 243, 243);
+    }
+
+    button.btn:not(:disabled):not(.disabled):active {
+        background-color: fuchsia;
+    }
+
+    select:focus-visible,
+    input:focus-visible {
+        outline-color: fuchsia;
+        outline-style: dashed;
+        outline-width: 3px;
+    }
+
+    @keyframes animateBackgroundColor {
+        0%{
+            background: repeating-conic-gradient(
+                hsla(0deg, 0%, 80%, 31%) 0deg 15deg,
+                hsla(0, 66%, 16%, 0) 0deg 30deg
+            ) hsl(187, 100%, 62%);
+        }
+        20%{
+            background: repeating-conic-gradient(
+                hsla(0deg, 0%, 80%, 31%) 0deg 15deg,
+                hsla(0, 66%, 16%, 0) 0deg 30deg
+            ) hsl(293, 80%, 54%);
+        }
+        40%{
+            background: repeating-conic-gradient(
+                hsla(0deg, 0%, 80%, 31%) 0deg 15deg,
+                hsla(0, 66%, 16%, 0) 15deg 30deg
+            ) hsl(123, 65%, 54%);
+        }
+        60%{
+            background: repeating-conic-gradient(
+                hsla(0deg, 0%, 80%, 31%) 0deg 15deg,
+                hsla(0, 66%, 16%, 0) 0deg 30deg
+            ) hsl(66, 75%, 54%);
+        }
+        80%{
+            background: repeating-conic-gradient(
+                hsla(0deg, 0%, 80%, 31%) 0deg 15deg,
+                hsla(0, 66%, 16%, 0) 0deg 30deg
+            ) hsl(17, 96%, 68%);
+        }
+        100%{
+            background: repeating-conic-gradient(
+                hsla(0deg, 0%, 80%, 31%) 0deg 15deg,
+                hsla(0, 66%, 16%, 0) 0deg 30deg
+            ) hsl(187, 100%, 62%);
+        }
+    }
+}

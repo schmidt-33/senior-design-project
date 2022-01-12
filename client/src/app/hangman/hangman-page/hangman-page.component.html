@@ -1,0 +1,121 @@
+<div class="hangman container vh-100 d-flex justify-content-center">
+
+    <div *ngIf="!gameState" id="initialScreen" class="full-height">
+        <div class="flex-display flex-column center-alignment justify-content-center full-height">
+            <h1 id="game-title">Hangman</h1>
+
+            <div class="create-game-container flex-display flex-column center-alignment justify-content-center">
+                <h2>Create a new game and create a shareable code</h2>
+    
+                <app-create-game
+                    [canChooseName]=false
+                    [wordListNames]="wordListNames"
+                    (gameCreated)="newGame($event)"
+                ></app-create-game>
+
+                <h3>
+                    Online: <span>{{ onlineCount }}</span>
+                </h3>
+            </div>
+
+            <div class="join-game-container center-alignment">
+                <h2 class="text-center">Join a game with a code</h2>
+
+                <div class="join-game-container center-alignment justify-content-center flex-display">
+                    <div class="create-game-form">
+                        <form appearance="fill">
+                            <input
+                                class="input-group-text mr-2"
+                                type="text"
+                                id="gameCodeInput"
+                                name="gameCodeInput"
+                                placeholder="Enter Game Code"
+                                [(ngModel)]="gameCode"
+                                (keyup.enter)="joinGame()"
+                            />
+                        </form>
+                    </div>
+                    <button
+                        class="btn btn-primary"
+                        color="primary"
+                        type="submit"
+                        id="joinGameButton"
+                        (click)="joinGame()"
+                    >
+                        Join Game
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div *ngIf="gameState" id="gameScreen">
+        <div class="flex-display flex-column center-alignment justify-content-center full-height">
+            <h1>
+                Your Game Code Is:
+                <span id="gameCodeDisplay">{{ gameCode }}</span>
+            </h1>
+            <div>
+                <img
+                    class="doll-image"
+                    src="assets/hangman/hang-{{ gameState.wrongAttempts || 0 }}.png"
+                />
+            </div>
+
+            <div class="win" *ngIf="gameState.gameOver && isWinner && !isTiedGame">You Win!</div>
+            <div class="tie" *ngIf="gameState.gameOver && isWinner && isTiedGame">You Tied!</div>
+            <div class="lose" *ngIf="gameState.gameOver && !isWinner">You Lose</div>
+
+            <div class="secretWord">
+                {{ gameState.revealedWord }}
+            </div>
+
+            <div *ngIf="gameState && !gameState.gameOver" id="keyboard">
+                <ul class="btn-group" *ngFor="let letter of gameState.guesses; index as i">
+                    <button
+                        class="btn btn-primary letter-button"
+                        (click)="tryGuess(i)"
+                        [disabled]="!isGuesser() || letter"
+                        [ngClass]="{guessed: letter}"
+                    >
+                        {{ getChar(i) }}
+                    </button>
+                </ul>
+            </div>
+
+            <div class="game-info-container flex-display justify-content-space-even center-alignment">
+                <button
+                    color="primary"
+                    type="submit"
+                    class="btn btn-primary"
+                    id="hangmanHomeButton"
+                    (click)="leaveGame()"
+                >
+                    Go Back
+                </button>
+                <button
+                    color="primary"
+                    type="submit"
+                    class="btn btn-primary"
+                    id="rematchButton"
+                    (click)="rematch()"
+                    [disabled]="!gameState.gameOver"
+                >
+                    Rematch
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg">
+        <img src="assets/hangman/hang-0.png" />
+        <img src="assets/hangman/hang-1.png" />
+        <img src="assets/hangman/hang-2.png" />
+        <img src="assets/hangman/hang-3.png" />
+        <img src="assets/hangman/hang-4.png" />
+        <img src="assets/hangman/hang-5.png" />
+        <img src="assets/hangman/hang-6.png" />
+    </div>
+
+</div>

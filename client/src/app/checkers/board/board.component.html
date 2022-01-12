@@ -1,0 +1,120 @@
+<!-- <section class="full-view-height"> -->
+    <div class="container vh-100 d-flex justify-content-center">
+        <div id="initialScreen" class="full-height">
+            <div class="flex-display flex-column center-alignment justify-content-center full-height">
+                <h1 id="game-title">Multiplayer Checkers</h1>
+                <div class="d-flex flex-column p-2 justify-content-center">
+                  
+                    <div class="d-inline-flex p-2 justify-content-center align-items-center">
+                        <form class="d-inline-flex p-2 justify-content-center">
+                          
+                        </form>
+                    </div>
+                </div>
+                <div class="create-game-container flex-display flex-column center-alignment justify-content-center">
+                    <h2>Create a new game and create a shareable code</h2>
+                    <button
+                        class="btn btn-primary"
+                        type="submit"
+                        id="newGameButton"
+                        style="margin-bottom: 5px;"
+                    >
+                        Create New Game
+                    </button>
+
+                    <button
+                    class="btn btn-primary"
+                    type="submit"
+                    id="singlePlayerGameButton"
+                    style="margin-top: 5px;"
+                >
+                    Create Single Player Game
+                </button>
+                    <h3>Online: <span>{{onlineCount}}</span></h3>
+                </div>
+                <div class="join-game-container center-alignment">
+                    <h2 class="text-center">Join a game with a code</h2>
+                    <div class="join-game-container center-alignment justify-content-center flex-display">
+                        <div class="create-game-form">
+                            <form appearance="fill">
+                                <input class="input-group-text mr-2" type="text" id="gameCodeInput" placeholder="Enter Game Code">
+                            </form>
+                        </div>
+                        <button
+                            class="btn btn-primary"
+                            color="primary"
+                            type="submit"
+                            id="joinGameButton"
+                        >
+                            Join Game
+                        </button>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        
+        <div id="gameScreen">
+            <div class="flex-display flex-column center-alignment justify-content-center full-height">
+                <h1>Your Game Code Is: <span id="gameCodeDisplay"></span></h1>
+
+                <div class="board animate__animated animate__fadeIn">
+                    <ng-container *ngFor="let row of board; let i = index">
+                        <div *ngFor="let square of row; let ii = index" 
+                            class="square" 
+                            [ngClass]="{
+                                'even-row': i % 2 == 0,
+                                'possibleJumper': spaceIsPossibleJumper(i, ii),
+                                'possibleMover': spaceIsPossibleMover(i,ii),
+                                'possibleJump': spaceIsPossibleJump(i,ii),
+                                'possibleMove': spaceIsPossibleMove(i,ii)
+                                }"
+                                (click)="moveSelectedPiece(i,ii)"
+                            >&nbsp;     
+                        </div>
+                    </ng-container>
+                        <template #piecesContainer></template>
+                         <div class="winner-overlay animate__animated animate__fadeIn" *ngIf="winner">
+                            <div class="winner-overlay-content">
+                                 <span *ngIf="winner == 'H'">You won!</span>
+                                 <span *ngIf="winner == 'C'">You lost.</span>
+                              <!--    <button type="button" class="btn btn-primary" (click)="resetBoard()"></button> -->
+                            </div>
+                        </div>
+                </div>
+
+                <div class="game-info animate__animated animate__fadeIn">
+                    <p>Wins:{{(wins$ | async).wins}}</p>
+                   <button class="btn btn-primary" type="button" [disabled]="resetting" style="background-color: #7e0f0f;" (click)="resetWins()">Reset Wins</button>
+                   <button class="btn btn-primary" type="button" [disabled]="resetting"[disabled]="resetoff" style="background-color: #0d8130;" (click)="resetBoard()">Restart Game</button>
+                   
+               </div>
+       
+            <div class="game-info-container flex-display justify-content-space-even center-alignment">
+               <h3 class="player-identifier">You Are Player: <span>{{playerNumber}}</span></h3>
+                <button
+                   color="primary"
+                   type="submit"
+                   class="btn btn-primary"
+                    id="checkersHomeButton"
+                   [disabled]=checkersHomeButtonDisabled
+                >
+                Go Back
+               </button>
+               <button
+                   color="primary"
+                   type="submit"
+                   class="btn btn-primary"
+                   id="rematchButton"
+                   [disabled]=rematchButtonDisabled
+               >
+                   Rematch ({{rematchCount}}/2)
+               </button>
+           </div>
+           
+           </div>
+           <h1 id="gameWinnerMessage" class="game-winner-container flex-display justify-content-space-even center-alignment">{{gameWinnerMessage}}</h1>
+
+            </div>
+    </div>
+
+<!-- </section> -->

@@ -1,0 +1,41 @@
+#gameScreen {
+    display: none;
+}
+
+.full-view-height {
+    height: 100vh;
+    margin-right: 0px;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.flex-display {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.center-alignment {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-space-even {
+    justify-content: space-evenly;
+}
+
+.game-info-container {
+    width: 600px;
+    height: 75px;
+}
+
+.flex-display {
+    display: flex;
+}

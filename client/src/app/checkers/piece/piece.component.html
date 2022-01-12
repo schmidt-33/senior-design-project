@@ -1,0 +1,8 @@
+<div class="square">
+    <div class="piece" 
+    [ngClass]="{'H': player == 'H', 'C': player == 'C'}" 
+    (click)="selectPiece1()">
+         <span *ngIf="isKing" class="crown">♕</span> 
+        <img class="crown" *ngIf="isKing" />
+    </div>
+</div>

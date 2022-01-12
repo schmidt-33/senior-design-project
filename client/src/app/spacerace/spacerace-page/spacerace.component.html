@@ -1,0 +1,72 @@
+<!-- Space Race -->
+<div class="container vh-100 d-flex justify-content-center">
+    <div id="initialScreen" class="full-height">
+        <div class="flex-display flex-column center-alignment justify-content-center full-height">
+            <h1 id="game-title">Space Race</h1>
+        
+            <div class="create-game-container flex-display flex-column center-alignment justify-content-center">
+                <h2>Create a new game and create a shareable code</h2>
+                <button
+                    class="btn btn-primary"
+                    type="submit"
+                    id="newGameButton"
+                >
+                    Create New Game
+                </button>
+                <h3>Online: <span>{{onlineCount}}</span></h3>
+            </div>
+            <div class="join-game-container center-alignment">
+                <h2 class="text-center">Join a game with a code</h2>
+                <div class="join-game-container center-alignment justify-content-center flex-display">
+                    <div class="create-game-form">
+                        <form appearance="fill">
+                            <input class="input-group-text mr-2" type="text" id="gameCodeInput" placeholder="Enter Game Code">
+                        </form>
+                    </div>
+                    <button
+                        class="btn btn-primary"
+                        color="primary"
+                        type="submit"
+                        id="joinGameButton"
+                    >
+                        Join Game
+                    </button>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <div id="gameScreen">
+        <h1>Your Game Code Is: <span id="gameCodeDisplay"></span></h1>
+        <div class="flex-display flex-column center-alignment justify-content-center full-height">
+            <div class="container">
+                <canvas id="canvas"></canvas>
+                <div class="info">
+                    <p id="your-score">{{ gameMessage}}</p>
+                    <br>
+                </div>
+            </div>
+            <div class="game-info-container flex-display justify-content-space-even center-alignment">
+                <h3 class="player-identifier">You Are Player: <span>{{playerNumber}}</span></h3>
+                <button
+                    color="primary"
+                    type="submit"
+                    class="btn btn-primary"
+                    id="spaceraceHomeButton"
+                [disabled]=spaceraceHomeButtonDisabled
+                >
+                    Go Back
+                </button>
+                <button
+                    color="primary"
+                    type="submit"
+                    class="btn btn-primary"
+                    id="rematchButton"
+                    [disabled]=rematchButtonDisabled
+                >
+                    Rematch ({{rematchCount}}/2)
+                </button>
+            </div>
+        </div>
+        <h1 id="gameWinnerMessage" class="game-winner-container flex-display justify-content-space-even center-alignment">{{gameWinnerMessage}}</h1>
+    </div>
+</div>

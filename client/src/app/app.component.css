@@ -1,0 +1,11 @@
+@media (max-width: 768px) {
+	.router-container {
+		padding-left: 15px;
+	}
+}
+  
+@media (min-width: 769px) {
+	.router-container {
+		padding-left: 275px;
+	}
+}

@@ -1,0 +1,123 @@
+
+#gameScreen {
+  display: none;
+  margin-top: 10px;
+}
+.full-view-height {
+  height: 100vh;
+  margin-right: 0px;
+}
+.full-height {
+  height: 100%;
+}
+.flex-display {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.center-alignment {
+  align-items: center;
+}
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-space-even {
+  justify-content: space-evenly;
+}
+.game-info-container {
+  width: 600px;
+  height: 75px;
+
+}
+#game-title {
+  font-size: 4em;
+  margin-bottom: 20px;
+}
+
+.ui-basic-segment{
+  
+  display: block;
+  width: 500px;
+  height: 600px;
+  opacity: 0.99;
+  pointer-events:none;
+  
+  }
+
+/*
+
+game styling 
+
+*/
+
+.grid .container,
+.grid .grid,
+.grid .custom-row,
+.grid .selection-row,
+.grid .winner-row {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid .selection-row,
+.grid .custom-row,
+.grid .winner-row {
+  width: 490px;
+  height: 75px;
+}
+
+.grid .winner-row {
+  margin-top: 15%;
+}
+
+
+.grid .winner-row .actions-group {
+  width: 100%;
+}
+
+
+.grid .custom-row {
+  background-color: #0448a1;   
+}
+
+.grid .case,
+.grid .selection-case {
+  width: 70px;
+  height: 80px;
+  float: left;
+}
+
+.grid .case .circle,
+.grid .selection-case .circle {
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.grid .case .circle.red,
+.grid .selection-case .circle.red {
+  background-color: #C0392B;
+}
+
+.grid .case .circle.white,
+.grid .selection-case .circle.white {
+  background-color: #E4F1FE;
+}
+
+.grid .case .circle.yellow,
+.grid .selection-case .circle.yellow {
+  background-color: #F7CA18;
+}
+
+h3{
+  color: #000000;
+  font-weight: bold;
+}
+
